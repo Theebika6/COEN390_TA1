@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //create a method when clicking settings button
+
+        //goes to settings activity after clicking the button settings
         SettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //goes to data activity after clicking the button showmycounts
         ShowMyCounts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //create sharedpreferences
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("shared_pref", MODE_PRIVATE);
         String counter1name = sharedPreferences.getString("counter1name","");
         String counter2name = sharedPreferences.getString("counter2name","");

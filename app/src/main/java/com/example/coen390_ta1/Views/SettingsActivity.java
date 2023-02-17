@@ -1,5 +1,6 @@
 package com.example.coen390_ta1.Views;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -8,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ public class SettingsActivity extends AppCompatActivity {
     Button Save;
     EditText MaxCounts;
     SharedPreferences shared_pref ;
+    private boolean edit_mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar actionbar = findViewById(R.id.action_bar);
         setSupportActionBar(actionbar);
         getSupportActionBar().setTitle("Settings Activity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Counter1NameText = (EditText)findViewById(R.id.Counter1NameText);
         Counter2NameText = (EditText)findViewById(R.id.Counter2NameText);
@@ -71,8 +75,8 @@ public class SettingsActivity extends AppCompatActivity {
                 Toast.makeText(SettingsActivity.this, "The information is saved", Toast.LENGTH_LONG);
 
                     // After saving goes back to the main page
-                    Intent intent = new Intent(SettingsActivity.this,MainActivity.class);
-                    startActivity(intent);
+                   // Intent intent = new Intent(SettingsActivity.this,MainActivity.class);
+                    //startActivity(intent);
             }
         });
     }
@@ -80,9 +84,9 @@ public class SettingsActivity extends AppCompatActivity {
     //Adding actions to the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settingsmenu,menu);
         return true;
     }
+
 }

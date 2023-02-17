@@ -21,6 +21,7 @@ public class DataActivity extends AppCompatActivity {
         Toolbar actionbar = findViewById(R.id.action_bar);
         setSupportActionBar(actionbar);
         getSupportActionBar().setTitle("Data Activity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView listView = findViewById(R.id.listview);
     }
